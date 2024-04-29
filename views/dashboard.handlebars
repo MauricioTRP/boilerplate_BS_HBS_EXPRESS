@@ -1,3 +1,19 @@
 {{> menu}}
 
-<h3>Cómo funciona en las vistas?</h3>
+<h3>Frutas del Melipillalbo Campión</h3>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div class="card-group">
+                {{#each frutas}}
+                    {{> producto
+                        nombre = this
+                    }}
+                {{/each}}
+            </div>
+        </div>
+    </div>
+</div>
+
+{{> modal}}

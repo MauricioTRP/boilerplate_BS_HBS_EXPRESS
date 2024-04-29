@@ -18,8 +18,14 @@ app.engine(
 
 app.use("/bootstrap", express.static(__dirname + '/node_modules/bootstrap/dist'))
 app.use("/popper", express.static(__dirname + "/node_modules/@popperjs/core/dist/umd"))
+app.use(express.static("assets"))
 
 app.get('/', (req, res) => {
-  res.render("dashboard")
+  res.render(
+    "dashboard",
+    {
+      frutas: ["banana", "cebollas", "lechuga", "papas", "pimenton", "tomate"]
+    }
+)
 })
 
